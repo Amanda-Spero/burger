@@ -16,10 +16,10 @@ router.get("/", function(req, res) {
   });
 });
 
-
+////create new
 router.post("/api/burgers", function(req, res) {
   burger.create([
-    "name", "devoured"
+    "burger_name", "devoured"
   ], [
     req.body.burger_name, req.body.devoured
   ], function(result) {
@@ -27,6 +27,8 @@ router.post("/api/burgers", function(req, res) {
     res.json({ id: result.insertId });
   });
 });
+///create new
+
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
